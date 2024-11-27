@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing required packages"
+      # - apt-get update && apt-get install -y unzip wget || true   # Optional: remove if not needed
+  pre_build:
+    commands:
+      - echo "Setting up Terraform"
+      - terraform --version  # Optional: to check the Terraform version
+  build:
+    commands:
+      - echo "Initializing Terraform"
+      - cd envs/dev
+      # - terraform state list
+      # - ls
+      # - terraform init -reconfigure
+
+      # - terraform destroy -auto-approve 
+      - terraform init 
+      # - terraform state list
+      # - echo "Planning Terraform changes"
+      # - terraform plan
+      # - echo "Applying Terraform changes"
+      # - terraform apply -auto-approve
+      - terraform destroy -auto-approve
+  post_build:
+    commands:
+      - echo "Terraform build completed."
+
+artifacts:
+  files:
+    - '**/*'  # Adjust this as needed for any outputs you want to keep

@@ -1,0 +1,9 @@
+# Terraform files
+./cicd-iac/.terraform
+./envs/.terraform
+*.tfstate
+*.tfstate.backup
+crash.log
+*.tfplan
+terraform-lab-key.pem
+.terraform.lock.hcl
