@@ -1,5 +1,5 @@
 module "ecs_task_definition" {
-  source             = "../../modules/application/ecs_task_definition"
+  source             = "./modules/application/ecs_task_definition"
   region             = var.region
   family             = var.family
   cpu                = var.cpu

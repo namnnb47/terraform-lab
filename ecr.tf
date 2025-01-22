@@ -1,5 +1,5 @@
 module "ecr" {
-  source          = "../../modules/application/ecr"
+  source          = "./modules/application/ecr"
   repository_name = "terraform-dev-repo-cdn"
   tags            = {
     Environment   = "dev"

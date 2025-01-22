@@ -1,5 +1,5 @@
 module "ecs_service" {
-  source               = "../../modules/application/ecs_service"
+  source               = "./modules/application/ecs_service"
   service_name         = "fe-service"
   cluster_id           = module.ecs_cluster.ecs_cluster_id
   task_definition_arn  = module.ecs_task_definition.task_definition_arn

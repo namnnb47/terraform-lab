@@ -1,3 +1,3 @@
 module "role" {
-    source  = "../../modules/application/role"
+    source  = "./modules/application/role"
 } 

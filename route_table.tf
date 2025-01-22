@@ -1,5 +1,5 @@
 module "route_table" {
-  source                      = "../../modules/networking/route_table"
+  source                      = "./modules/networking/route_table"
   vpc_id                      = module.vpc.vpc_id
   igw_id                      = module.gateway.ig_id
   nat_id                      = module.gateway.nat_id

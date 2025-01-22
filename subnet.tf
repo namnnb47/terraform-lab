@@ -1,5 +1,5 @@
 module "subnet" {
-  source                      = "../../modules/networking/subnet"
+  source                      = "./modules/networking/subnet"
   vpc_id                      = module.vpc.vpc_id
   public_subnet_cidr_1        = var.public_subnet_cidr_1
   public_subnet_cidr_2        = var.public_subnet_cidr_2

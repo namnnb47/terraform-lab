@@ -1,5 +1,5 @@
 module "rds_instance" {
-  source                 = "../../modules/application/rds"
+  source                 = "./modules/application/rds"
   allocated_storage      = 20
   engine                 = "mysql"
   engine_version         = "8.0"

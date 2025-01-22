@@ -9,7 +9,7 @@ locals {
 }
 
 module "security_group" {
-  source = "../../modules/application/security_group"
+  source = "./modules/application/security_group"
   vpc_id                  = module.vpc.vpc_id
   public_sg_ingress_cidr = "${local.my_ip}/32"  # Replace with your IP address for SSH access
 }
