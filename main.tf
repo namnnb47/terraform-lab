@@ -22,12 +22,12 @@ variable "project" {
 
 
 
-terraform {
-  backend "s3" {
-    bucket         = "terraform-lab-state-bucket"
-    key            = "state/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-lock-table"
-    encrypt        = true
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = "terraform-lab-state-bucket"
+#     key            = "state/terraform.tfstate"
+#     region         = "us-east-1"
+#     dynamodb_table = "terraform-lock-table"
+#     encrypt        = true
+#   }
+# }
