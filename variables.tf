@@ -50,26 +50,26 @@ variable "availability_zone_2" {
   type        = string
 }
 
-variable "ami" {
-  description = "AMI ID for the instances"
-  type        = string
-}
+# variable "ami" {
+#   description = "AMI ID for the instances"
+#   type        = string
+# }
 
-variable "instance_type" {
-  description = "Instance type for the EC2 instances"
-  type        = string
-}
+# variable "instance_type" {
+#   description = "Instance type for the EC2 instances"
+#   type        = string
+# }
 
-variable "instance_count" {
-  description = "Number of instances to launch"
-  type        = number
-  default     = 2
-}
+# variable "instance_count" {
+#   description = "Number of instances to launch"
+#   type        = number
+#   default     = 2
+# }
 
-variable "s3_bucket_name" {
-  description = "Name of the S3 bucket for CodePipeline"
-  type        = string
-}
+# variable "s3_bucket_name" {
+#   description = "Name of the S3 bucket for CodePipeline"
+#   type        = string
+# }
 
 variable "public_subnet_1" {
   description = "The subnet ID where the instances will be created"
@@ -101,35 +101,35 @@ variable "trust_subnet_2" {
   type        = string
 }
 
-variable "family" {
-  description = "Family of the ECS task"
-  type        = string
-}
+# variable "family" {
+#   description = "Family of the ECS task"
+#   type        = string
+# }
 
-variable "cpu" {
-  description = "CPU units for the task"
-  type        = string
-}
+# variable "cpu" {
+#   description = "CPU units for the task"
+#   type        = string
+# }
 
-variable "memory" {
-  description = "Memory for the task"
-  type        = string
-}
+# variable "memory" {
+#   description = "Memory for the task"
+#   type        = string
+# }
 
-variable "container_name" {
-  description = "Name of the container"
-  type        = string
-}
+# variable "container_name" {
+#   description = "Name of the container"
+#   type        = string
+# }
 
-variable "container_port" {
-  description = "Port for the container"
-  type        = number
-}
+# variable "container_port" {
+#   description = "Port for the container"
+#   type        = number
+# }
 
-variable "container_image" {
-  description = "Port for the container"
-  type        = string
-}
+# variable "container_image" {
+#   description = "Port for the container"
+#   type        = string
+# }
 
 
 
