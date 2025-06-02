@@ -1,22 +1,11 @@
 module "eks" {
-  source          = "./modules/application/eks"
-  cluster_name    = var.cluster_name
-  vpc_id          = module.vpc.vpc_id
-  subnet_ids      = [module.vpc.public_subnet_1, module.vpc.public_subnet_2]
-  node_groups     = var.node_groups
-}
-
-variable "cluster_name" {
-  description = "The name of the EKS cluster"
-  type        = string
-}
-
-variable "node_groups" {
-  description = "Configuration for the EKS node groups"
-  type = list(object({
-    name          = string
-    instance_type = string
-    min_size      = number
-    max_size      = number
-  }))
+  source               = "./modules/compute/eks"
+  cluster_name         = var.cluster_name
+  cluster_role_arn     = module.iam.eks_cluster_role_arn
+  node_group_role_arn  = module.iam.eks_node_group_role_arn
+  subnet_ids           = module.subnet.public_subnet_ids
+  desired_size         = 2
+  min_size             = 1
+  max_size             = 3
+  instance_type        = "t3.medium"
 }

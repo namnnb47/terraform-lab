@@ -45,3 +45,10 @@
 # # output "codepipeline_id" {
 # #   value = module.codepipeline.pipeline_name
 # # }
+output "kubeconfig" {
+  value = {
+    endpoint = module.eks.cluster_endpoint
+    cluster  = module.eks.cluster_name
+    arn      = module.eks.cluster_arn
+  }
+}

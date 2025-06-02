@@ -4,9 +4,9 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups    = [var.alb_sg]
   subnets            = var.subnets
-  tags = {
-    Name = "alb-security-group"
-  }
+  # tags = {
+  #   Name = "alb-security-group"
+  # }
 }
 
 resource "aws_lb_target_group" "target_group" {
