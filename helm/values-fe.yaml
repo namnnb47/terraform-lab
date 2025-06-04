@@ -1,0 +1,16 @@
+app:
+  name: react-hello-world
+  namespace: dev
+  image:
+    repository: 333516754419.dkr.ecr.us-east-1.amazonaws.com/terraform-dev-ecr-repo
+    tag: dev
+  port: 80
+
+replicaCount: 2
+
+service:
+  type: LoadBalancer   # <- thay vì ClusterIP
+  port: 80
+
+ingress:
+  enabled: false       # <- tắt ingress nếu không có domain

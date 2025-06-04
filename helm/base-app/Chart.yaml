@@ -1,0 +1,6 @@
+apiVersion: v2
+name: base-app
+description: A generic Helm chart for deploying containerized apps
+type: application
+version: 0.1.0
+appVersion: "1.0"

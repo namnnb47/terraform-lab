@@ -1,0 +1,22 @@
+# monitoring-values.yaml
+grafana:
+  adminPassword: admin123
+  persistence:
+    enabled: false
+
+prometheus:
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: gp3   # hoặc storage name bạn thấy hoạt động
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 8Gi
+
+nodeExporter:
+  enabled: true
+
+alertmanager:
+  enabled: false

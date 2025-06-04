@@ -1,0 +1,38 @@
+adminUser: admin
+
+# Mật khẩu admin tự động tạo ra hoặc bạn có thể set cố định:
+adminPassword: admin123
+
+service:
+  type: LoadBalancer
+
+ingress:
+  enabled: false
+
+persistence:
+  enabled: false
+
+dashboardProviders:
+  dashboardproviders.yaml:
+    apiVersion: 1
+    providers:
+      - name: 'default'
+        orgId: 1
+        folder: ''
+        type: file
+        disableDeletion: false
+        updateIntervalSeconds: 10
+        options:
+          path: /var/lib/grafana/dashboards/default
+
+dashboards:
+  default:
+    kube-prometheus-stack:
+      gnetId: 6417
+      revision: 1
+      datasource: Prometheus
+
+persistence:
+  enabled: false
+
+
