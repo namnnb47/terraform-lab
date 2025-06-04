@@ -181,3 +181,8 @@ variable "node_role_arn_name" {
 #   type        = string
   
 # }
+
+variable "ecr_repository_name" {
+  description = "Name of the ECR repository"
+  type        = string
+}

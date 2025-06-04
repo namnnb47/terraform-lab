@@ -1,0 +1,29 @@
+alertmanager:
+  enabled: true
+  persistentVolume:
+    enabled: false
+
+server:
+  persistentVolume:
+    enabled: false
+  service:
+    type: LoadBalancer
+  ingress:
+    enabled: false
+
+pushgateway:
+  enabled: false
+
+nodeExporter:
+  enabled: true
+
+kubeStateMetrics:
+  enabled: true
+
+
+persistence:
+  enabled: true
+  storageClassName: gp2
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi

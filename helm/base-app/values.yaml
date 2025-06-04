@@ -1,0 +1,16 @@
+app:
+  name: my-app
+  image:
+    repository: my-docker-repo/my-app
+    tag: latest
+  port: 3000
+
+replicaCount: 2
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  host: my-app.example.com

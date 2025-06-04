@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "ecr-cdn" {
+resource "aws_ecr_repository" "ecr_repository" {
   name = var.repository_name
 
   image_scanning_configuration {

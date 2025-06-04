@@ -32,3 +32,4 @@ cluster_name            = "terraform-lab-eks-cluster"
 node_role_arn_name      = "terraform-lab-eks-node-role"
 # cluster_name = "demo-eks-cluster"
 # subnet_ids   = ["subnet-abc111", "subnet-def222"]
+ecr_repository_name    = "terraform-dev-ecr-repo"
