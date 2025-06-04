@@ -6,6 +6,6 @@
 crash.log
 *.tfplan
 terraform-lab-key.pem
-.terraform
+.terraform/
 .terraform/*
-.terraform.lock.hcl
+.terraform.lock.hcl.terraform/
