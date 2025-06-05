@@ -1,0 +1,40 @@
+name: Terraform Destroy
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Nhập YES để xác nhận hủy toàn bộ hạ tầng"
+        required: true
+        default: "NO"
+
+jobs:
+  destroy:
+    name: Terraform Destroy
+    runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: Kiểm tra xác nhận
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "YES" ]; then
+            echo "⚠️ Bạn chưa xác nhận chính xác (phải gõ: YES). Hủy bỏ thao tác destroy."
+            exit 1
+          fi
+
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v3
+
+      - name: Cài đặt Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7
+
+      - name: Khởi tạo Terraform
+        run: terraform init
+
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
