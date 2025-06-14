@@ -27,4 +27,3 @@ helm install monitoring-stack prometheus-community/kube-prometheus-stack \
 forward để dùng ui
 kubectl port-forward svc/monitoring-stack-grafana -n monitoring 3000:80
 
-

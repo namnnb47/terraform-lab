@@ -5,7 +5,7 @@ module "eks" {
   node_group_role_arn  = module.iam.eks_node_group_role_arn
   subnet_ids           = module.subnet.public_subnet_ids
   desired_size         = 2
-  min_size             = 0
+  min_size             = 1
   max_size             = 3
   instance_type        = "t3.medium"
 }
